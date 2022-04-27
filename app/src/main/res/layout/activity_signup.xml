@@ -1,0 +1,148 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height = "match_parent"
+    tools:context = ".SignUpActivity">
+
+    <TextView
+        android:id="@+id/tvSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:text="Sign Up"
+        android:textColor="@color/black"
+        android:textSize="35dp" />
+
+
+    <ImageView
+        android:id="@+id/ivInfinite_signup"
+        android:layout_width="185dp"
+        android:layout_height="83dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/etFName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivInfinite_signup"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="30dp"
+        android:focusable="true"
+        android:hint="First Name" />
+
+    <EditText
+        android:id="@+id/etLName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etFName"
+        android:layout_alignEnd="@+id/etFName"
+        android:layout_alignRight="@+id/etFName"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Last Name" />
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etLName"
+        android:layout_alignEnd="@+id/etLName"
+        android:layout_alignRight="@+id/etLName"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Address" />
+
+    <EditText
+        android:id="@+id/etCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etAddress"
+        android:layout_alignEnd="@+id/etAddress"
+        android:layout_alignRight="@+id/etAddress"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Country" />
+
+    <EditText
+        android:id="@+id/etZipcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etCountry"
+        android:layout_alignEnd="@+id/etCountry"
+        android:layout_alignRight="@+id/etCountry"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Zip code"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etZipcode"
+        android:layout_alignEnd="@+id/etZipcode"
+        android:layout_alignRight="@+id/etZipcode"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etEmail"
+        android:layout_alignEnd="@+id/etEmail"
+        android:layout_alignRight="@+id/etEmail"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="phone" />
+
+
+<!--    <Button-->
+<!--        android:id="@+id/login"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_toStartOf="@+id/textview"-->
+<!--        android:layout_toLeftOf="@+id/textview"-->
+<!--        android:text="login" />-->
+
+    <Button
+        android:id="@+id/btnSignup_signupScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-111dp"
+        android:layout_marginBottom="93dp"
+        android:layout_toRightOf="@+id/tvSignUp"
+        android:text="Signup" />
+
+</RelativeLayout>
