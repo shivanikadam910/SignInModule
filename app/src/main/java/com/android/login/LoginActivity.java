@@ -2,12 +2,14 @@ package com.android.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -39,6 +41,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             btnLogin.setEnabled(false);
         } else {
             btnLogin.setEnabled(true);
+        }
+    }
+    private void clearEditText() {
+        etUserName.getText().clear();
+        etPassword.getText().clear();
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            manager.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
 
@@ -86,6 +97,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Intent i1 = new Intent(this, HomeActivity.class);
                     i1.putExtra("userModel", UserModel.getLoginUser());
                     startActivity(i1);
+                    clearEditText();
                 }
                 else{
                     Toast.makeText(this,"Username and password don't match", Toast.LENGTH_SHORT).show();

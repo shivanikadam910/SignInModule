@@ -1,0 +1,66 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/llAddUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="20dp"
+            android:hint="First Name"
+            android:textSize="20dp">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/etLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etFirstName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="20dp"
+            android:hint="Last Name"
+            android:textSize="20dp">
+
+        </EditText>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llAddUser"
+        android:weightSum="1"
+        tools:context=".HomeActivity">
+
+        <Button
+            android:id="@+id/btnAddUserToRV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_weight="1"
+            android:text="Add User" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/linearLayout"
+        android:layoutAnimation="@anim/layout_animation_fall_down">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</RelativeLayout>
+
+

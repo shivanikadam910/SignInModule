@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--XMl Layout for RecyclerView-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlacesActivity">
+
+    <com.android.login.GridRecyclerView
+        android:id="@+id/rvAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutAnimation="@anim/grid_layout_animation_fall_down"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

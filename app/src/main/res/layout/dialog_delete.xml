@@ -8,27 +8,20 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update"
+        android:text="Delete"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline">
 
     </TextView>
 
-    <EditText
-        android:id="@+id/etUpdateFName"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="First Name"
-        android:layout_margin="10dp"
-        android:inputType="text" />
+        android:text="Are you sure you want to delete?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_margin="20dp">
 
-    <EditText
-        android:id="@+id/etUpdateLName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint="Last Name"
-        android:inputType="text" />
+    </TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,14 +42,14 @@
             android:textColor="@color/black"></Button>
 
         <Button
-            android:id="@+id/btnUpdate"
+            android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_weight="1"
             android:backgroundTint="@color/white"
-            android:text="Update"
-            android:textColor="#0000ff"
+            android:text="Delete"
+            android:textColor="#DC0B35"
             ></Button>
 
     </LinearLayout>
