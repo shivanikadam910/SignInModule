@@ -1,38 +1,99 @@
 <?xml version = "1.0" encoding = "utf-8"?>
-<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
-    xmlns:tools = "http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height = "match_parent"
-    tools:context = ".ProfileActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    android:orientation="vertical"
+    android:id="@+id/llProfile">
+
     <ImageView
         android:id="@+id/ivInfinite_signup"
-        android:layout_width="185dp"
-        android:layout_height="83dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
         android:src="@drawable/logo" />
 
-<TextView
-    android:id="@+id/tvFName_profile"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentEnd="true"
-    android:layout_alignParentRight="true"
-    android:layout_marginLeft="50dp"
-    android:layout_marginTop="200dp"
-    android:layout_marginRight="50dp"
-    android:focusable="true"
-    android:textColor="@color/black"
-    android:textSize="20dp" />
+    <TextView
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivInfinite_signup"
+        android:text="Profile"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/ivProfilePicture"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_below="@id/profile"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+        android:src="@drawable/profile_picture" />
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="2"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnCamera"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/ivProfilePicture"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="camera" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnGallary"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/ivProfilePicture"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="gallary" />-->
+
+<!--    </LinearLayout>-->
+
+    <TextView
+        android:id="@+id/tvFName_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llProfile"
+        android:focusable="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        />
     <!--        android:hint="fname"-->
 
 
     <TextView
         android:id="@+id/tvLname_profile"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvFName_profile"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:focusable="true"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+    <!--        android:hint="lName"-->
+
+
+    <TextView
+        android:id="@+id/tvAddress_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvLname_profile"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -43,101 +104,80 @@
         android:focusable="true"
         android:textColor="@color/black"
         android:textSize="20dp" />
-    <!--        android:hint="lName"-->
-
-
-<TextView
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:id="@+id/tvAddress_profile"
-android:layout_below="@+id/tvLname_profile"
-android:layout_alignParentStart="true"
-android:layout_alignParentLeft="true"
-android:layout_alignParentEnd="true"
-android:layout_alignParentRight="true"
-android:layout_marginLeft="50dp"
-android:layout_marginRight="50dp"
-android:layout_marginTop="10dp"
-android:focusable="true"
-android:textSize="20dp"
-android:textColor="@color/black"
-    />
     <!--        android:hint="address"-->
 
 
-<TextView
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:id="@+id/tvCountry_profile"
-android:layout_below="@+id/tvAddress_profile"
-android:layout_alignParentStart="true"
-android:layout_alignParentLeft="true"
-android:layout_alignParentEnd="true"
-android:layout_alignParentRight="true"
-android:layout_marginLeft="50dp"
-android:layout_marginRight="50dp"
-android:layout_marginTop="10dp"
-android:focusable="true"
-android:textSize="20dp"
-android:textColor="@color/black"
-    />
+    <TextView
+        android:id="@+id/tvCountry_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAddress_profile"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:focusable="true"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
     <!--        android:hint="Country"-->
 
 
-<TextView
-android:id="@+id/tvZipcode_profile"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_below="@+id/tvCountry_profile"
-android:layout_alignParentStart="true"
-android:layout_alignParentLeft="true"
-android:layout_alignParentEnd="true"
-android:layout_alignParentRight="true"
-android:layout_marginLeft="50dp"
-android:layout_marginTop="10dp"
-android:layout_marginRight="50dp"
-android:focusable="true"
-android:textColor="@color/black"
-android:textSize="20dp" />
+    <TextView
+        android:id="@+id/tvZipcode_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCountry_profile"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:focusable="true"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
     <!--        android:hint="ZipCode"-->
 
 
-<TextView
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:id="@+id/tvEmail_profile"
-android:layout_below="@+id/tvZipcode_profile"
-android:layout_alignParentStart="true"
-android:layout_alignParentLeft="true"
-android:layout_alignParentEnd="true"
-android:layout_alignParentRight="true"
-android:layout_marginLeft="50dp"
-android:layout_marginRight="50dp"
-android:layout_marginTop="10dp"
-android:focusable="true"
-android:textSize="20dp"
-android:textColor="@color/black"
-    />
+    <TextView
+        android:id="@+id/tvEmail_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvZipcode_profile"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:focusable="true"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
     <!--        android:hint="Email"-->
 
 
-<TextView
-android:id="@+id/tvPhone_profile"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_below="@+id/tvEmail_profile"
-android:layout_alignParentStart="true"
-android:layout_alignParentLeft="true"
-android:layout_alignParentEnd="true"
-android:layout_alignParentRight="true"
-android:layout_marginLeft="50dp"
-android:layout_marginTop="10dp"
-android:layout_marginRight="50dp"
-android:focusable="true"
-android:textColor="@color/black"
-android:textSize="20dp" />
+    <TextView
+        android:id="@+id/tvPhone_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvEmail_profile"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:focusable="true"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
     <!--        android:hint="phone"-->
 
-    </RelativeLayout>
+</LinearLayout>
 
 

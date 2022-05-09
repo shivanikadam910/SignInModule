@@ -2,18 +2,23 @@ package com.android.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import Service.BackgroundService;
+import Service.ForegroundService;
 import model.UserModel;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnProfile, btnAddUser, btnPlace;
+    private Button btnProfile, btnAddUser, btnPlace, btnAnimations, btnStartService, btnStopService, btnFGService, btnBoundService, btnReceiver, btnImageDownload;
     private EditText etFirstName, etLastName;
+
 
 
     @Override
@@ -29,7 +34,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btnProfile = findViewById(R.id.btnProfile);
         btnAddUser = findViewById(R.id.btnAddUser);
         btnPlace = findViewById(R.id.btnPlace);
+        btnAnimations = findViewById(R.id.btnAnimations);
+        btnStartService = findViewById(R.id.btnStartBGService);
+        btnStopService = findViewById(R.id.btnStopBGService);
+        btnFGService = findViewById(R.id.btnForegroundService);
+        btnBoundService = findViewById(R.id.btnBoundService);
+        btnReceiver = findViewById(R.id.btnReceiver);
+        btnImageDownload = findViewById(R.id.btnImageDownload);
     }
+
+
 
 
     /*private void setData(){
@@ -53,6 +67,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btnProfile.setOnClickListener(this);
         btnAddUser.setOnClickListener(this);
         btnPlace.setOnClickListener(this);
+        btnAnimations.setOnClickListener(this);
+        btnStartService.setOnClickListener(this);
+        btnStopService.setOnClickListener(this);
+        btnFGService.setOnClickListener(this);
+        btnBoundService.setOnClickListener(this);
+        btnReceiver.setOnClickListener(this);
+        btnImageDownload.setOnClickListener(this);
     }
 
 
@@ -76,7 +97,27 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnAnimations:
                 Intent i1 = new Intent(this, AnimationActivity.class);
+                startActivity(i1);
                 break;
+            case R.id.btnStartBGService:
+                startService(new Intent(this, BackgroundService.class));
+                break;
+            case R.id.btnStopBGService:
+                stopService(new Intent(this, BackgroundService.class));
+                break;
+            case R.id.btnForegroundService:
+                Intent i2 = new Intent(this, ForegroundActivity.class);
+                startActivity(i2);
+                break;
+            case R.id.btnBoundService:
+                Intent i3 = new Intent(this, BoundActivity.class);
+                startActivity(i3);
+            case R.id.btnReceiver:
+                Intent i4 = new Intent(this, ReceiverActivity.class);
+                startActivity(i4);
+            case R.id.btnImageDownload:
+                Intent i5 = new Intent(this, ImageDownloadActivity.class);
+                startActivity(i5);
         }
     }
 }

@@ -98,6 +98,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     i1.putExtra("userModel", UserModel.getLoginUser());
                     startActivity(i1);
                     clearEditText();
+                    finish();
                 }
                 else{
                     Toast.makeText(this,"Username and password don't match", Toast.LENGTH_SHORT).show();
@@ -107,6 +108,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btnSignUp_loginScreen:
                 Intent i2 = new Intent(this, SignUpActivity.class);
                 startActivity(i2);
+                finish();
                 break;
 
         }
