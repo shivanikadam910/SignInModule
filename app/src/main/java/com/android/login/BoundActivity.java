@@ -14,6 +14,7 @@ import android.widget.TextView;
 import java.util.Date;
 
 import Service.BoundService;
+// bound acitivity
 
 public class BoundActivity extends AppCompatActivity {
 
