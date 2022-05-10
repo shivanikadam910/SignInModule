@@ -70,14 +70,14 @@ public class ImageDownloadService extends IntentService {
     private void initRetrofit() {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://sample-videos.com/")
-//                .baseUrl("https://unsplash.com/")
+//                .baseUrl("https://sample-videos.com/")
+                .baseUrl("https://unsplash.com/")
                 .build();
 
         RetrofitInterface retrofitInterface = retrofit.create(RetrofitInterface.class);
 
-        Call<ResponseBody> request = retrofitInterface.downloadImage("img/Sample-jpg-image-50kb.jpg");
-//        Call<ResponseBody> request = retrofitInterface.downloadImage("photos/YYW9shdLIwo/download?force=true");
+//        Call<ResponseBody> request = retrofitInterface.downloadImage("img/Sample-jpg-image-50kb.jpg");
+        Call<ResponseBody> request = retrofitInterface.downloadImage("photos/YYW9shdLIwo/download?force=true");
         try {
 
             downloadImage(request.execute().body());

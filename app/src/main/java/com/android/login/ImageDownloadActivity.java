@@ -60,8 +60,7 @@ public class ImageDownloadActivity extends AppCompatActivity implements View.OnC
                 boolean downloadComplete = intent.getBooleanExtra("downloadComplete", false);
                 if (downloadComplete) {
                     Toast.makeText(getApplicationContext(), "File download completed", Toast.LENGTH_SHORT).show();
-                    File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath() + File.separator +
-                            "image-new.jpg");
+                    File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath());
                     Picasso.get().load(file).into(imageView);
                 }
             }

@@ -16,7 +16,7 @@ import model.UserModel;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnProfile, btnAddUser, btnPlace, btnAnimations, btnStartService, btnStopService, btnFGService, btnBoundService, btnReceiver, btnImageDownload;
+    private Button btnProfile, btnAddUser, btnPlace, btnAnimations, btnStartService, btnStopService, btnFGService, btnBoundService, btnReceiver, btnImageDownload, btnAddSQLite;
     private EditText etFirstName, etLastName;
 
 
@@ -41,6 +41,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btnBoundService = findViewById(R.id.btnBoundService);
         btnReceiver = findViewById(R.id.btnReceiver);
         btnImageDownload = findViewById(R.id.btnImageDownload);
+        btnAddSQLite = findViewById(R.id.btnAddSQLite);
     }
 
 
@@ -74,6 +75,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btnBoundService.setOnClickListener(this);
         btnReceiver.setOnClickListener(this);
         btnImageDownload.setOnClickListener(this);
+        btnAddSQLite.setOnClickListener(this);
     }
 
 
@@ -112,12 +114,19 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnBoundService:
                 Intent i3 = new Intent(this, BoundActivity.class);
                 startActivity(i3);
+                break;
             case R.id.btnReceiver:
                 Intent i4 = new Intent(this, ReceiverActivity.class);
                 startActivity(i4);
+                break;
             case R.id.btnImageDownload:
                 Intent i5 = new Intent(this, ImageDownloadActivity.class);
                 startActivity(i5);
+                break;
+            case R.id.btnAddSQLite:
+                Intent i6 = new Intent(this, SQLiteActivity.class);
+                startActivity(i6);
+                break;
         }
     }
 }

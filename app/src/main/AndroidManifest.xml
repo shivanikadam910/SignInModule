@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.android.login">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -16,6 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
+        <activity
+            android:name=".SQLiteActivity"
+            android:exported="false" />
         <activity android:name=".ImageDownloadActivity" />
         <activity android:name=".ReceiverActivity" />
         <activity android:name=".BoundActivity" />
@@ -39,9 +43,10 @@
         <service android:name="Service.BackgroundService" />
         <service android:name="Service.ForegroundService" />
         <service android:name="Service.BoundService" />
-        <service android:name="Service.ImageDownloadService"/>
+        <service android:name="Service.ImageDownloadService" />
 
-        <receiver android:name="Receiver.FirstBroadcastReceiver"
+        <receiver
+            android:name="Receiver.FirstBroadcastReceiver"
             tools:ignore="Instantiatable" />
     </application>
 
