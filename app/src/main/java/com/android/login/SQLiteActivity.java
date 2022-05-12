@@ -1,6 +1,8 @@
 package com.android.login;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,19 +15,23 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import Adapter.CustomAdapter;
+import Adapter.CustomerAdapter;
 import model.CustomerModel;
 import model.DatabaseHelper;
+import model.UserModel;
 
 public class SQLiteActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnViewAll, btnAdd, btnDeleteAll;
     private Switch stActive;
     private EditText etName, etAge;
-    private ListView lsUsers;
-    private ArrayAdapter customerArray;
     private DatabaseHelper helper;
+    private RecyclerView recyclerView;
+    public RecyclerView.Adapter adapter;
 
 
     @Override
@@ -43,13 +49,15 @@ public class SQLiteActivity extends AppCompatActivity implements View.OnClickLis
         btnViewAll = findViewById(R.id.btnViewAll);
         btnAdd = findViewById(R.id.btnAdd);
         btnDeleteAll = findViewById(R.id.btnDeleteAll);
-        lsUsers = findViewById(R.id.lsUsers);
-
+        recyclerView = findViewById(R.id.recyclerView2);
+        // everyitem --> fixed size
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager((new LinearLayoutManager(this)));
+//        listUsers = new ArrayList<>();
         helper = new DatabaseHelper(this);
-        customerArray = new ArrayAdapter<CustomerModel>(this, android.R.layout.simple_list_item_1, helper.getEveryone());
-        lsUsers.setAdapter(customerArray);
-
-
+        adapter = new CustomerAdapter(helper.getEveryone(), this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setNestedScrollingEnabled(false);
     }
 
     private void setListeners() {
@@ -57,18 +65,18 @@ public class SQLiteActivity extends AppCompatActivity implements View.OnClickLis
         btnViewAll.setOnClickListener(this);
         btnDeleteAll.setOnClickListener(this);
 
-        lsUsers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                System.out.println("hii***********");
-                System.out.println(position + "position");
-                CustomerModel clickCustomer = (CustomerModel) parent.getItemAtPosition(position);
-                helper.deleteOne(clickCustomer);
-                customerArray = new ArrayAdapter<CustomerModel>(SQLiteActivity.this, android.R.layout.simple_list_item_1, helper.getEveryone());
-                lsUsers.setAdapter(customerArray);
-                Toast.makeText(SQLiteActivity.this, " DELETED " + clickCustomer.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
+//        lsUsers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+////                System.out.println("hii***********");
+//                System.out.println(position + "position");
+//                CustomerModel clickCustomer = (CustomerModel) parent.getItemAtPosition(position);
+//                helper.deleteOne(clickCustomer);
+//                customerArray = new ArrayAdapter<CustomerModel>(SQLiteActivity.this, android.R.layout.simple_list_item_1, helper.getEveryone());
+//                lsUsers.setAdapter(customerArray);
+//                Toast.makeText(SQLiteActivity.this, " DELETED " + clickCustomer.toString(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
     }
 
@@ -84,23 +92,22 @@ public class SQLiteActivity extends AppCompatActivity implements View.OnClickLis
 //           cModel = new cModel
         }
         boolean success = helper.addOne(cModel);
-        customerArray = new ArrayAdapter<CustomerModel>(this, android.R.layout.simple_list_item_1, helper.getEveryone());
-        lsUsers.setAdapter(customerArray);
+        adapter = new CustomerAdapter(helper.getEveryone(), this);
+        recyclerView.setAdapter(adapter);
         Toast.makeText(this, "Success " + success, Toast.LENGTH_SHORT).show();
 
     }
 
     private void viewUsers() {
-        customerArray = new ArrayAdapter<CustomerModel>(this, android.R.layout.simple_list_item_1, helper.getEveryone());
-        System.out.println(helper.getEveryone() + "getUser");
-        lsUsers.setAdapter(customerArray);
+        adapter = new CustomerAdapter(helper.getEveryone(), this);
+        recyclerView.setAdapter(adapter);
 //        Toast.makeText(this, customer.toString(), Toast.LENGTH_SHORT).show();
     }
 
     private void deleteAll() {
         helper.deleteAll();
-        customerArray = new ArrayAdapter<CustomerModel>(this, android.R.layout.simple_list_item_1, helper.getEveryone());
-        lsUsers.setAdapter(customerArray);
+        adapter = new CustomerAdapter(helper.getEveryone(), this);
+        recyclerView.setAdapter(adapter);
         Toast.makeText(this, "Success ", Toast.LENGTH_SHORT).show();
     }
 

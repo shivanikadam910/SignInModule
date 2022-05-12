@@ -18,8 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
-            android:name=".SQLiteActivity"
+            android:name=".RoomDatabaseActivity"
             android:exported="false" />
+        <activity
+            android:name=".SQLiteActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity android:name=".ImageDownloadActivity" />
         <activity android:name=".ReceiverActivity" />
         <activity android:name=".BoundActivity" />

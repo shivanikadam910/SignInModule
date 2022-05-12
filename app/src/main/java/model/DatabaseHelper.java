@@ -48,18 +48,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
     }
-    public boolean deleteOne(CustomerModel customerModel){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String qrString = "DELETE FROM " + CUSTOMER_TABLE + " WHERE " + COLUMN_ID + " = " + customerModel.getId();
-        Cursor cursor = db.rawQuery(qrString,null);
-        if(cursor.moveToFirst()){
-            return true;
-        }
-        else{
-            return false;
-        }
 
+    public boolean deleteOne(int id)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(CUSTOMER_TABLE, COLUMN_ID + "=" + id, null) > 0;
     }
+//    public boolean deleteOne(CustomerModel customerModel){
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        String qrString = "DELETE FROM " + CUSTOMER_TABLE + " WHERE " + COLUMN_ID + " = " + customerModel.getId();
+//        Cursor cursor = db.rawQuery(qrString,null);
+//        if(cursor.moveToFirst()){
+//            return true;
+//        }
+//        else{
+//            return false;
+//        }
+//
+//    }
 
     public void deleteAll(){
         String queryString = "DELETE FROM " + CUSTOMER_TABLE;

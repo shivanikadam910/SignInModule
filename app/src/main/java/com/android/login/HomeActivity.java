@@ -16,7 +16,7 @@ import model.UserModel;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnProfile, btnAddUser, btnPlace, btnAnimations, btnStartService, btnStopService, btnFGService, btnBoundService, btnReceiver, btnImageDownload, btnAddSQLite;
+    private Button btnProfile, btnAddUser, btnPlace, btnAnimations, btnStartService, btnStopService, btnFGService, btnBoundService, btnReceiver, btnImageDownload, btnAddSQLite, btnRoomDatabase;
     private EditText etFirstName, etLastName;
 
 
@@ -42,6 +42,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btnReceiver = findViewById(R.id.btnReceiver);
         btnImageDownload = findViewById(R.id.btnImageDownload);
         btnAddSQLite = findViewById(R.id.btnAddSQLite);
+        btnRoomDatabase = findViewById(R.id.btnRoomDatabase);
     }
 
 
@@ -76,6 +77,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btnReceiver.setOnClickListener(this);
         btnImageDownload.setOnClickListener(this);
         btnAddSQLite.setOnClickListener(this);
+        btnRoomDatabase.setOnClickListener(this);
     }
 
 
@@ -126,6 +128,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnAddSQLite:
                 Intent i6 = new Intent(this, SQLiteActivity.class);
                 startActivity(i6);
+                break;
+            case R.id.btnRoomDatabase:
+                Intent i7 = new Intent(this, RoomDatabaseActivity.class);
+                startActivity(i7);
                 break;
         }
     }
