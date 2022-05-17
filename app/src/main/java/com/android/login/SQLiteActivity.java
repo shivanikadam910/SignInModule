@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -64,21 +66,7 @@ public class SQLiteActivity extends AppCompatActivity implements View.OnClickLis
         btnAdd.setOnClickListener(this);
         btnViewAll.setOnClickListener(this);
         btnDeleteAll.setOnClickListener(this);
-
-//        lsUsers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-////                System.out.println("hii***********");
-//                System.out.println(position + "position");
-//                CustomerModel clickCustomer = (CustomerModel) parent.getItemAtPosition(position);
-//                helper.deleteOne(clickCustomer);
-//                customerArray = new ArrayAdapter<CustomerModel>(SQLiteActivity.this, android.R.layout.simple_list_item_1, helper.getEveryone());
-//                lsUsers.setAdapter(customerArray);
-//                Toast.makeText(SQLiteActivity.this, " DELETED " + clickCustomer.toString(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
-    }
+        }
 
     private void addUser() {
         CustomerModel cModel;
@@ -95,12 +83,13 @@ public class SQLiteActivity extends AppCompatActivity implements View.OnClickLis
         adapter = new CustomerAdapter(helper.getEveryone(), this);
         recyclerView.setAdapter(adapter);
         Toast.makeText(this, "Success " + success, Toast.LENGTH_SHORT).show();
-
+        resetParameters();
     }
 
     private void viewUsers() {
         adapter = new CustomerAdapter(helper.getEveryone(), this);
         recyclerView.setAdapter(adapter);
+        resetParameters();
 //        Toast.makeText(this, customer.toString(), Toast.LENGTH_SHORT).show();
     }
 
@@ -109,7 +98,25 @@ public class SQLiteActivity extends AppCompatActivity implements View.OnClickLis
         adapter = new CustomerAdapter(helper.getEveryone(), this);
         recyclerView.setAdapter(adapter);
         Toast.makeText(this, "Success ", Toast.LENGTH_SHORT).show();
+        resetParameters();
     }
+
+    private void resetParameters() {
+        etName.setText("");
+        etAge.setText("");
+        stActive.setChecked(false);
+        closeKeyboard();
+    }
+
+    private void closeKeyboard() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            manager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+        etName.requestFocus();
+    }
+
 
 
     @Override

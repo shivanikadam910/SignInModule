@@ -1,90 +1,97 @@
 package Adapter;
 
 import android.content.Context;
-import android.util.Log;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
-import com.android.login.HomeActivity;
 import com.android.login.R;
-import com.android.login.SQLiteActivity;
-import com.zerobranch.layout.SwipeLayout;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import model.CustomerModel;
+import database.AppDatabase;
+import database.User;
 
-import static androidx.recyclerview.widget.RecyclerView.NO_POSITION;
+public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.MyViewHolder> {
 
-import model.DatabaseHelper;
-import model.UserModel;
-
-
-public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
-
-    private List<CustomerModel> listUsers;
     private Context context;
+    private List<User> userList;
 
-
-    public RoomAdapter(List<CustomerModel> listItems, Context context) {
-        this.listUsers = listItems;
+    public RoomAdapter(Context context) {
         this.context = context;
     }
 
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+        notifyDataSetChanged();
+
+    }
+
+    public void setUser(User user) {
+        this.userList.add(user);
+        notifyDataSetChanged();
+    }
+
+
     @NonNull
     @Override
-    public RoomAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_customer, parent, false);
-        return new ViewHolder(v);
+    public RoomAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.list_customer, parent, false);
+        return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        CustomerModel listItem = listUsers.get(position);
-        holder.tvName.setText(listItem.getName());
-        holder.tvAge.setText(String.valueOf(listItem.getAge()));
-        holder.isActive.setText(String.valueOf(listItem.isActive()));
+    public void onBindViewHolder(@NonNull RoomAdapter.MyViewHolder holder, int position) {
+
+        final User user = userList.get(position);
+        holder.tvName.setText(user.user_name);
+        holder.tvAge.setText(String.valueOf(user.age));
+        holder.isActive.setText(String.valueOf(user.isActive));
+        // prevent unwanted situations
+        holder.checkBox2.setOnCheckedChangeListener(null);
+        holder.checkBox2.setSelected(user.isSelected);
+
+        holder.checkBox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                user.isSelected = isChecked;
+
+                AppDatabase db = AppDatabase.getDbInstance(context);
+                db.userDao().getAllUsers();
+                System.out.println("update selected user "+ user.toString());
+                db.userDao().updateSelectedUser(isChecked, user.user_id);
+
+            }
+        });
+        holder.checkBox2.setChecked(user.isSelected);
+
     }
+
 
     @Override
     public int getItemCount() {
-        return listUsers.size();
+        return this.userList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView tvName;
         private TextView tvAge;
         private TextView isActive;
+        private CheckBox checkBox2;
 
-        public ViewHolder(View itemView) {
-            super(itemView);
-            initViews();
-            setListeners();
-        }
-
-        private void initViews() {
+        public MyViewHolder(View view) {
+            super(view);
             tvName = itemView.findViewById(R.id.tvName_lc);
             tvAge = itemView.findViewById(R.id.tvAge_lc);
             isActive = itemView.findViewById(R.id.tvActivity_lc);
-        }
-
-        private void setListeners() {
-        }
-
-
-        @Override
-        public void onClick(View view) {
+            checkBox2 = itemView.findViewById(R.id.checkBox2);
 
         }
     }

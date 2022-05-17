@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RoomDatabaseActivity">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -63,58 +59,65 @@
             app:layout_constraintTop_toBottomOf="@+id/etAge_rm"
             app:layout_constraintVertical_bias="0.0" />
 
-<!--        <LinearLayout-->
-<!--            android:id="@+id/llButtons_rm"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="10dp"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:weightSum="3"-->
-<!--            app:layout_constraintEnd_toStartOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/stActive_rm">-->
+        <LinearLayout
+            android:id="@+id/llButtons_rm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stActive_rm">
+
+            <Button
+                android:id="@+id/btnViewAll_rm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="@string/view_all" />
+
+            <Button
+                android:id="@+id/btnAdd_rm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="Add" />
+
+            <Button
+                android:id="@+id/btnDelete_rm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="Delete" />
 
 <!--            <Button-->
-<!--                android:id="@+id/btnViewAll_rm"-->
+<!--                android:id="@+id/btnShowSelectedData"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="match_parent"-->
 <!--                android:layout_margin="10dp"-->
 <!--                android:layout_weight="1"-->
-<!--                android:text="@string/view_all" />-->
-
-<!--            <Button-->
-<!--                android:id="@+id/btnAdd_rm"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_margin="10dp"-->
-<!--                android:layout_weight="1"-->
-<!--                android:text="Add" />-->
-
-<!--            <Button-->
-<!--                android:id="@+id/btnDeleteAll_rm"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_margin="10dp"-->
-<!--                android:layout_weight="1"-->
-<!--                android:text="Delete all" />-->
+<!--                android:text="Selected Data" />-->
 
 
-<!--        </LinearLayout>-->
+        </LinearLayout>
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/stActive_rm" />
+            app:layout_constraintTop_toBottomOf="@+id/llButtons_rm" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
