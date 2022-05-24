@@ -61,7 +61,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         private Button btnCancel, btnUpdate, btnDelete;
         private EditText etUpdateFName, etUpdateLName;
 
-
         public ViewHolder(View itemView) {
             super(itemView);
             initViews();

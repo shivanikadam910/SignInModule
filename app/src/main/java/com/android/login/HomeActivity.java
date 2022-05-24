@@ -16,7 +16,7 @@ import model.UserModel;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnProfile, btnAddUser, btnPlace, btnAnimations, btnStartService, btnStopService, btnFGService, btnBoundService, btnReceiver, btnImageDownload, btnAddSQLite, btnRoomDatabase;
+    private Button btnProfile, btnAddUser, btnPlace, btnAnimations, btnStartService, btnStopService, btnFGService, btnBoundService, btnReceiver, btnImageDownload, btnAddSQLite, btnRoomDatabase, btnTabLayout, btnJsonData;
     private EditText etFirstName, etLastName;
 
 
@@ -43,6 +43,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btnImageDownload = findViewById(R.id.btnImageDownload);
         btnAddSQLite = findViewById(R.id.btnAddSQLite);
         btnRoomDatabase = findViewById(R.id.btnRoomDatabase);
+        btnTabLayout = findViewById(R.id.btnTabLayout);
+        btnJsonData = findViewById(R.id.btnJsonData);
     }
 
 
@@ -78,6 +80,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btnImageDownload.setOnClickListener(this);
         btnAddSQLite.setOnClickListener(this);
         btnRoomDatabase.setOnClickListener(this);
+        btnTabLayout.setOnClickListener(this);
+        btnJsonData.setOnClickListener(this);
     }
 
 
@@ -132,6 +136,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnRoomDatabase:
                 Intent i7 = new Intent(this, RoomDatabaseActivity.class);
                 startActivity(i7);
+                break;
+            case R.id.btnTabLayout:
+                Intent i8 = new Intent(this, TabLayoutFragment.class);
+                startActivity(i8);
+                break;
+            case R.id.btnJsonData:
+                Intent i9 = new Intent(this, HomeNewActivity.class);
+                startActivity(i9);
                 break;
         }
     }

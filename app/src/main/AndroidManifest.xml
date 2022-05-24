@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
+            android:name=".TabLayoutFragment"
+            android:exported="false" />
+        <activity
             android:name=".RoomDatabaseActivity"
             android:exported="false" />
         <activity
@@ -29,19 +32,22 @@
         <activity android:name=".ForegroundActivity" />
         <activity android:name=".AnimationActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".HomeActivity"
+        <activity android:name=".JsonParsingActivity" />
+        <activity android:name=".HomeNewActivity"/>
+        <activity android:name=".JsonParsingActivityPost"/>
+        <activity
+            android:name=".HomeActivity"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".AddUserActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".PlacesActivity" />
-        <activity android:name=".LoginActivity"/>
-
+        <activity android:name=".LoginActivity" />
 
         <service android:name="Service.BackgroundService" />
         <service android:name="Service.ForegroundService" />

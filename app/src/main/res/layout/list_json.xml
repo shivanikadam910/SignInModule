@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+    <TextView
+        android:id="@+id/tvIdJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="id"
+        android:layout_margin="5dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvNameJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Name"
+        android:layout_margin="5dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvEmailJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Email"
+        android:layout_margin="5dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvGenderJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Gender"
+        android:layout_margin="5dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvStatusJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Status"
+        android:layout_margin="5dp">
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#3F51B5"/>
+
+</LinearLayout>

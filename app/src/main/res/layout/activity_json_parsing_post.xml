@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/etJsonId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:hint="id"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"></EditText>
+
+    <EditText
+        android:id="@+id/etJsonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:hint="Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"></EditText>
+
+    <EditText
+        android:id="@+id/etJsonEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:hint="Email"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"></EditText>
+
+    <EditText
+        android:id="@+id/etJsonGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:hint="Gender"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"></EditText>
+
+    <EditText
+        android:id="@+id/etJsonStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:hint="Status"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"></EditText>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Post"></Button>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"></ProgressBar>
+
+
+</LinearLayout>
