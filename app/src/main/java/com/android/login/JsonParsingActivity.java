@@ -74,7 +74,6 @@ public class JsonParsingActivity extends AppCompatActivity {
                         jsonModel.setGender(gender);
                         jsonModel.setStatus(status);
 
-
                         jsonList.add(jsonModel);
                     }
                     adapter.addData(jsonList);

@@ -18,6 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
+            android:name=".ShowJsonXmlActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FibonacciListActivity"
+            android:exported="false" />
+        <activity
             android:name=".TabLayoutFragment"
             android:exported="false" />
         <activity
@@ -33,10 +39,11 @@
         <activity android:name=".AnimationActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".JsonParsingActivity" />
-        <activity android:name=".HomeNewActivity"/>
-        <activity android:name=".JsonParsingActivityPost"/>
+        <activity android:name=".JsonParsingActivityPost" />
+        <activity android:name=".SharedPrefActivity" />
+        <activity android:name=".HomeActivity" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".HomeNewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,6 +55,7 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".PlacesActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".ShowSeriesActivity" />
 
         <service android:name="Service.BackgroundService" />
         <service android:name="Service.ForegroundService" />

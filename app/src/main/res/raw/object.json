@@ -1,0 +1,26 @@
+[
+  {
+    "type": "TextView",
+    "height": 100
+  },
+  {
+    "type": "EditText",
+    "height": 120
+  },
+  {
+    "type": "SeekBar",
+    "height": 130
+  },
+  {
+    "type": "Button",
+    "height": 150
+  },
+  {
+    "type": "Button",
+    "height": 170
+  },
+  {
+    "type": "TextView",
+    "height": 100
+  }
+]
